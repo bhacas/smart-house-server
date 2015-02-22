@@ -35,7 +35,7 @@ $title = 'Sypialnia 1';
                         <div class="row">
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
-                                <a id="light1" class="small-box bg-red ajaxButton" href="#">
+                                <a id="light1" class="small-box bg-red-active disabled ajaxButton" href="#">
                                     <div class="inner">
                                         <h3>Światło 1</h3>
                                         <p>Wyłączone</p>
@@ -47,7 +47,7 @@ $title = 'Sypialnia 1';
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
-                                <a id="light2" class="small-box bg-red ajaxButton" href="#">
+                                <a id="light2" class="small-box bg-red-active disabled ajaxButton" href="#">
                                     <div class="inner">
                                         <h3>Światło 2</h3>
                                         <p>Wyłączone</p>
@@ -59,7 +59,7 @@ $title = 'Sypialnia 1';
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
-                                <a id="outlet1" class="small-box bg-aqua ajaxButton" href="#">
+                                <a id="outlet1" class="small-box bg-aqua-active disabled ajaxButton" href="#">
                                     <div class="inner">
                                         <h3>Kontakt 1</h3>
                                         <p>Wyłączony</p>
@@ -71,7 +71,7 @@ $title = 'Sypialnia 1';
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
-                                <a id="outlet2" class="small-box bg-aqua ajaxButton" href="#">
+                                <a id="outlet2" class="small-box bg-aqua-active disabled ajaxButton" href="#">
                                     <div class="inner">
                                         <h3>Kontakt 2</h3>
                                         <p>Wyłączony</p>
@@ -83,7 +83,7 @@ $title = 'Sypialnia 1';
                             </div><!-- ./col -->
                             <div class="col-lg-3 col-xs-6">
                                 <!-- small box -->
-                                <div id="window" class="small-box bg-green">
+                                <div id="window" class="small-box bg-green-active disabled">
                                     <div class="inner">
                                         <h3>Okno</h3>
                                         <p>Zamknięte</p>
@@ -164,9 +164,9 @@ $title = 'Sypialnia 1';
                 $.ajax({url: "/admin/getStatus.php?ip=<?php echo $ip ?>", success: function(result) {
                         $.each(result.outputs, function(type, value) {
                             if (value == 0) {
-                                $('#' + type).removeClass('bg-yellow');
+                                $('#' + type).addClass('disabled');
                             } else {
-                                $('#' + type).addClass('bg-yellow');
+                                $('#' + type).removeClass('disabled');
                             }
                         });
 
@@ -195,10 +195,10 @@ $title = 'Sypialnia 1';
                 $(".ajaxButton").click(function(e) {
                     e.preventDefault();
                     console.log($(this).attr('id'));
-                    var value = $(this).hasClass('bg-yellow') ? 0 : 1;
+                    var value = $(this).hasClass('disabled') ? 1 : 0;
                     var _this = $(this);
                     $.ajax({url: "http://<?php echo $ip ?>/?type=" + $(this).attr('id') + "&value=" + value, success: function(result) {
-                            _this.toggleClass('bg-yellow');
+                            _this.toggleClass('disabled');
                         }
                     });
                 });
