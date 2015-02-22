@@ -28,6 +28,12 @@ function typeToText($type, $value) {
              } else {
                  return 'Wyłączono kontakt 2';
              }
+         case 'window':
+             if ($value == 1) {
+                 return 'Otworzono okno';
+             } else {
+                 return 'Zamknięto okno';
+             }
          case 'motion':
              return 'Wykryto ruch';
 

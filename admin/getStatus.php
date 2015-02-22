@@ -7,8 +7,11 @@ $ip = $_GET['ip'];
 
 $date = new \DateTime('-1 day');
 $query = 'SELECT time, value FROM notify WHERE ip = "' . $ip . '" AND type="temp" AND time > "'.$date->format('Y-m-d H:i:s').'" ORDER BY time ASC';
-//var_dump($query); die;
-$temp = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+$tempDaily = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+$dateWeek = new \DateTime('-7 day');
+$query = 'SELECT time, ROUND(AVG(value), 2) as value FROM notify WHERE ip = "' . $ip . '" AND type="temp" AND time > "'.$dateWeek->format('Y-m-d H:i:s').'" GROUP BY YEAR(time), MONTH(time), DAY(time) ORDER BY time ASC';
+$tempWeekly = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
 $query = 'SELECT id, time, type, value FROM notify WHERE ip = "' . $ip . '" ORDER BY time DESC LIMIT 10';
 $notifies = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
@@ -41,7 +44,10 @@ $out = array(
         'window' => $window['value']
     ),
     'notifies' => $notifies,
-    'temp' => $temp,
+    'temp' => array(
+        'daily' => $tempDaily,
+        'weekly' => $tempWeekly,
+    ),
 );
 
 header('Content-Type: application/json');

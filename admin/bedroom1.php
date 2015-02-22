@@ -1,5 +1,6 @@
 <?php
 $ip = '192.168.1.112';
+$title = 'Sypialnia 1';
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +16,11 @@ $ip = '192.168.1.112';
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
-                        Sypialnia 1
-                    </h1>
+                    <h1><?php echo $title ?></h1>
                     <ol class="breadcrumb">
                         <li><a href="index.php"><i class="fa fa-home"></i> Panel główny</a></li>
                         <li class="active"><i class="fa fa-moon-o"></i> Sypialnie</li>
-                        <li class="active">Sypialnia 1</li>
+                        <li class="active"><?php echo $title ?></li>
                     </ol>
                 </section>
 
@@ -80,7 +79,7 @@ $ip = '192.168.1.112';
                         </div><!-- ./col -->
                         <div class="col-lg-3 col-xs-6">
                             <!-- small box -->
-                            <a id="window" class="small-box bg-green" href="#">
+                            <div id="window" class="small-box bg-green">
                                 <div class="inner">
                                     <h3>Okno</h3>
                                     <p>Zamknięte</p>
@@ -88,19 +87,22 @@ $ip = '192.168.1.112';
                                 <div class="icon">
                                     <i class="fa fa-windows"></i>
                                 </div>
-                            </a>
+                            </div>
                         </div><!-- ./col -->
                     </div><!-- /.row -->
 
                     <div class="row">
                         <section class="col-lg-7">
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <i class="fa fa-line-chart"></i>
-                                    <h3 class="box-title">Temperatura</h3>
-                                </div>
-                                <div class="box-body">
-                                    <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs pull-right ui-sortable-handle">
+                                    <li class="active"><a href="#revenue-chart" data-toggle="tab" aria-expanded="true">Dzienny</a></li>
+                                    <li class=""><a href="#sales-chart" data-toggle="tab" aria-expanded="false">Tygodniowy</a></li>
+                                    <li class="pull-left header"><i class="fa fa-line-chart"></i> Temperatura</li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <!-- Morris chart - Sales -->
+                                    <div class="chart tab-pane active" id="temp-dayly-chart" style="position: relative; height: 300px;"></div>
+                                    <div class="chart tab-pane" id="temp-weekly-chart" style="position: relative; height: 300px;"></div>
                                 </div>
                             </div>
                         </section>
@@ -132,9 +134,9 @@ $ip = '192.168.1.112';
         <script src="js/plugins/morris/morris.min.js" type="text/javascript"></script>
         <script type="text/javascript">
 
-            var chart = new Morris.Line({
+            var temp-daily-chart = new Morris.Line({
                 // ID of the element in which to draw the chart.
-                element: 'sales-chart',
+                element: 'temp-daily-chart',
                 // Chart data records -- each entry in this array corresponds to a point on
                 // the chart.
                 data: [],
@@ -164,7 +166,7 @@ $ip = '192.168.1.112';
                         });
                         $('#notifies table').html(htmlTable);
 
-                        chart.setData(result.temp);
+                        temp-daily-chart.setData(result.temp.daily);
                     }
                 });
             }
