@@ -101,7 +101,7 @@ $title = 'Sypialnia 1';
                                 </ul>
                                 <div class="tab-content no-padding">
                                     <!-- Morris chart - Sales -->
-                                    <div class="chart tab-pane active" id="temp-dayly-chart" style="position: relative; height: 300px;"></div>
+                                    <div class="chart tab-pane active" id="temp-daily-chart" style="position: relative; height: 300px;"></div>
                                     <div class="chart tab-pane" id="temp-weekly-chart" style="position: relative; height: 300px;"></div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ $title = 'Sypialnia 1';
         <script src="js/plugins/morris/morris.min.js" type="text/javascript"></script>
         <script type="text/javascript">
 
-            var temp-daily-chart = new Morris.Line({
+            var tempDailyChart = new Morris.Line({
                 // ID of the element in which to draw the chart.
                 element: 'temp-daily-chart',
                 // Chart data records -- each entry in this array corresponds to a point on
@@ -166,7 +166,7 @@ $title = 'Sypialnia 1';
                         });
                         $('#notifies table').html(htmlTable);
 
-                        temp-daily-chart.setData(result.temp.daily);
+                        tempDailyChart.setData(result.temp.daily);
                     }
                 });
             }
