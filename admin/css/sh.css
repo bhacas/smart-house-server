@@ -1,9 +1,0 @@
-.small-box .icon {
-    font-size: 45px;
-}
-
-.small-box:hover .icon {
-    animation: none;
-    -webkit-animation: none;
-    -moz-animation: none;
-}

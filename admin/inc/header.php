@@ -1,12 +1,9 @@
-<header class="header">
-    <a href="../index.html" class="logo">
-        <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        Smart House 1.0
-    </a>
+<header class="main-header">
+    <a href="../../index2.html" class="logo"><b>Smart</b>House <small>1.0</small></a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>

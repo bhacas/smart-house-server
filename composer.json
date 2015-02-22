@@ -1,0 +1,6 @@
+{
+    "require": {
+        "swiftmailer/swiftmailer": "@stable",
+        "almasaeed2010/adminlte": "dev-master"
+    }
+}
