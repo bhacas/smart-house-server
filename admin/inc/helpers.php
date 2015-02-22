@@ -16,6 +16,18 @@ function typeToText($type, $value) {
              } else {
                  return 'Zgaszono światło 2';
              }
+         case 'outlet1':
+             if ($value == 1) {
+                 return 'Załączono kontakt 1';
+             } else {
+                 return 'Wyłączono kontakt 1';
+             }
+         case 'outlet2':
+             if ($value == 1) {
+                 return 'Załączono kontakt 2';
+             } else {
+                 return 'Wyłączono kontakt 2';
+             }
          case 'motion':
              return 'Wykryto ruch';
 

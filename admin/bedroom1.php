@@ -16,12 +16,12 @@ $ip = '192.168.1.112';
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Blank page
-                        <small>Control panel</small>
+                        Sypialnia 1
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Blank page</li>
+                        <li><a href="index.php"><i class="fa fa-home"></i> Panel główny</a></li>
+                        <li class="active"><i class="fa fa-moon-o"></i> Sypialnie</li>
+                        <li class="active">Sypialnia 1</li>
                     </ol>
                 </section>
 
