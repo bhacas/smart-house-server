@@ -80,14 +80,10 @@ $ip = '192.168.1.112';
                         </div><!-- ./col -->
                         <div class="col-lg-3 col-xs-6">
                             <!-- small box -->
-                            <a class="small-box bg-green" href="">
+                            <a id="window" class="small-box bg-green" href="#">
                                 <div class="inner">
-                                    <h3>
-                                        Okno
-                                    </h3>
-                                    <p>
-                                        Zamknięte
-                                    </p>
+                                    <h3>Okno</h3>
+                                    <p>Zamknięte</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fa fa-windows"></i>

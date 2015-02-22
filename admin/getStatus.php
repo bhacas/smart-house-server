@@ -29,12 +29,16 @@ $outlet1 = $db->query($query)->fetch();
 $query = 'SELECT id, time, type, value FROM notify WHERE ip = "' . $ip . '" AND type = "outlet2" ORDER BY time DESC LIMIT 1';
 $outlet2 = $db->query($query)->fetch();
 
+$query = 'SELECT id, time, type, value FROM notify WHERE ip = "' . $ip . '" AND type = "window" ORDER BY time DESC LIMIT 1';
+$window = $db->query($query)->fetch();
+
 $out = array(
     'outputs' => array(
         'light1' => $light1['value'],
         'light2' => $light2['value'],
         'outlet1' => $outlet1['value'],
-        'outlet2' => $outlet2['value']
+        'outlet2' => $outlet2['value'],
+        'window' => $window['value']
     ),
     'notifies' => $notifies,
     'temp' => $temp,
