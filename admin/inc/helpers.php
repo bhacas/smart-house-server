@@ -4,6 +4,8 @@ function typeToText($type, $value) {
      switch ($type) {
          case 'temp':
              return 'Odczytano temperaturę (' . $value . ' st C)';
+         case 'foto':
+             return 'Odczytano jasność (' . $value . ')';
          case 'light1':
              if ($value == 1) {
                  return 'Zapalono światło 1';

@@ -141,6 +141,8 @@ $title = 'Sypialnia 1';
                 xkey: 'time',
                 // A list of names of data record attributes that contain y-values.
                 ykeys: ['value'],
+                ymin: 'auto 10',
+                ymax: 'auto 30',
                 // Labels for the ykeys -- will be displayed when you hover over the
                 // chart.
                 labels: ['Temperatura']
@@ -155,6 +157,8 @@ $title = 'Sypialnia 1';
                 xkey: 'time',
                 // A list of names of data record attributes that contain y-values.
                 ykeys: ['value'],
+                ymin: 'auto 10',
+                ymax: 'auto 30',
                 // Labels for the ykeys -- will be displayed when you hover over the
                 // chart.
                 labels: ['Temperatura']
