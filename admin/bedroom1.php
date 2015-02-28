@@ -99,14 +99,16 @@ $title = 'Sypialnia 1';
                             <section class="col-lg-7">
                                 <div class="nav-tabs-custom">
                                     <ul class="nav nav-tabs pull-right ui-sortable-handle">
-                                        <li class="active"><a href="#temp-daily-chart" data-toggle="tab" aria-expanded="true">Dzienny</a></li>
-                                        <li class=""><a href="#temp-weekly-chart" data-toggle="tab" aria-expanded="false">Tygodniowy</a></li>
-                                        <li class="pull-left header"><i class="fa fa-line-chart"></i> Temperatura</li>
+                                        <li class="active"><a href="#temp-daily-chart" data-toggle="tab" aria-expanded="true">Temperatura dzienny</a></li>
+                                        <li class=""><a href="#temp-weekly-chart" data-toggle="tab" aria-expanded="false">Temperatura tygodniowy</a></li>
+                                        <li class=""><a href="#temp-weekly-chart" data-toggle="tab" aria-expanded="false">Światłość dzienny</a></li>
+                                        <li class="pull-left header"><i class="fa fa-line-chart"></i> Wykresy</li>
                                     </ul>
                                     <div class="tab-content no-padding">
                                         <!-- Morris charts -->
                                         <div class="chart tab-pane active" id="temp-daily-chart" style="position: relative; height: 300px;"></div>
                                         <div class="chart tab-pane" id="temp-weekly-chart" style="position: relative; height: 300px;"></div>
+                                        <div class="chart tab-pane" id="foto-weekly-chart" style="position: relative; height: 300px;"></div>
                                     </div>
                                 </div>
                             </section>
@@ -162,6 +164,22 @@ $title = 'Sypialnia 1';
                 // Labels for the ykeys -- will be displayed when you hover over the
                 // chart.
                 labels: ['Temperatura']
+            });
+            var fotoDailyChart = new Morris.Line({
+                // ID of the element in which to draw the chart.
+                element: 'foto-weekly-chart',
+                // Chart data records -- each entry in this array corresponds to a point on
+                // the chart.
+                data: [],
+                // The name of the data record attribute that contains x-values.
+                xkey: 'time',
+                // A list of names of data record attributes that contain y-values.
+                ykeys: ['value'],
+                ymin: 'auto',
+                ymax: 'auto',
+                // Labels for the ykeys -- will be displayed when you hover over the
+                // chart.
+                labels: ['Światłość']
             });
 
             function getStatus() {

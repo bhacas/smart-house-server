@@ -6,6 +6,10 @@ include_once 'inc/helpers.php';
 $ip = $_GET['ip'];
 
 $date = new \DateTime('-1 day');
+$query = 'SELECT time, value FROM notify WHERE ip = "' . $ip . '" AND type="foto" AND time > "'.$date->format('Y-m-d H:i:s').'" ORDER BY time ASC';
+$fotoDaily = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+
+$date = new \DateTime('-1 day');
 $query = 'SELECT time, value FROM notify WHERE ip = "' . $ip . '" AND type="temp" AND time > "'.$date->format('Y-m-d H:i:s').'" ORDER BY time ASC';
 $tempDaily = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
@@ -48,6 +52,7 @@ $out = array(
         'daily' => $tempDaily,
         'weekly' => $tempWeekly,
     ),
+    'foto' => $fotoDaily
 );
 
 header('Content-Type: application/json');
