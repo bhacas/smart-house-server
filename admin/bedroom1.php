@@ -201,6 +201,7 @@ $title = 'Sypialnia 1';
 
                         tempDailyChart.setData(result.temp.daily);
                         tempWeeklyChart.setData(result.temp.weekly);
+                        fotoDailyChart.setData(result.foto);
                     }
                 });
             }
