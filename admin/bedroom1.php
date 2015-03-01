@@ -101,7 +101,7 @@ $title = 'Sypialnia 1';
                                     <ul class="nav nav-tabs pull-right ui-sortable-handle">
                                         <li class="active"><a href="#temp-daily-chart" data-toggle="tab" aria-expanded="true">Temperatura dzienny</a></li>
                                         <li class=""><a href="#temp-weekly-chart" data-toggle="tab" aria-expanded="false">Temperatura tygodniowy</a></li>
-                                        <li class=""><a href="#temp-weekly-chart" data-toggle="tab" aria-expanded="false">Światłość dzienny</a></li>
+                                        <li class=""><a href="#foto-weekly-chart" data-toggle="tab" aria-expanded="false">Światłość dzienny</a></li>
                                         <li class="pull-left header"><i class="fa fa-line-chart"></i> Wykresy</li>
                                     </ul>
                                     <div class="tab-content no-padding">
